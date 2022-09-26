@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+  background: url("./assets/terrain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  width: 95%;
+  height: 100vh;
+  position: relative;
+  color: white;
+  margin: auto;
+}
+
+.game-over {
+  visibility: hidden;
+  position: absolute;
+  font-size: 40px;
+  width: 450px;
+  background-color: rgba(255, 255, 255, 0.61);
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 40px;
+  margin-top: 20%;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+.game-over h3 {
+  font-size: 30px;
+}
+
+.trait-central {
+  border: 1px dashed white;
+  position: absolute;
+  height: 80%;
+  left: 50%;
+  top: 10%;
+}
+
+.tab-score {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+}
+
+.score {
+  background-color: rgba(255, 255, 255, 0.74);
+  width: 200px;
+  color: black;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px 2px gray;
+}
+
+.ball {
+  width: 25px;
+  height: 25px;
+  background: url("./assets/ball.png");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.palet {
+  width: 25px;
+  height: 20vh;
+  background-color: rgb(83, 196, 30);
+  box-shadow: 0 0 5px 2px white;
+}
+
+.player-1 {
+  top: 50%;
+  position: absolute;
+  left: 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.player-2 {
+  top: 50%;
+  position: absolute;
+  right: 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.start {
+  position: absolute;
+  left: 50%;
+  top: 2vh;
+  width: 100px;
+  padding: 10px;
+  transform: translatex(-50%);
+  border-radius: 10px;
+  transition: 0.2s;
+  border-color: transparent;
+}
+
+.start:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
