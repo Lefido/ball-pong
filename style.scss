@@ -27,15 +27,14 @@ body {
     position: absolute;
     font-size: 40px;
     width: 450px;
-    background-color: rgba(255, 255, 255, 0.61);
+    background-color: rgb(255, 255, 255);
     color: black;
     text-align: center;
     padding: 20px;
     border-radius: 40px;
-    margin-top: 20%;
-    margin-left: 50%;
+    left: 50%;
+    top: 30%;
     transform: translate(-50%);
-
     
     h3 {
         font-size: 30px;
@@ -62,10 +61,10 @@ body {
 
 .score {
     background-color: rgba(255, 255, 255, 0.74);
-    width: 200px;
+    width: 250px;
     color: black;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 10px 0 10px 0px;
     box-shadow: 0 0 20px 2px gray;
 }
 
@@ -87,8 +86,12 @@ body {
     width: 25px;
     height: 20vh;
     // border: 1px solid white;
-    background-color: rgb(83, 196, 30);
+    background-color: rgb(30, 196, 80);
     box-shadow: 0 0 5px 2px white;
+}
+
+.player {
+    font-size: 45px;
 }
 
 .player-1 {
@@ -110,13 +113,16 @@ body {
 .start {
     position: absolute;
     left: 50%;
-    top: 2vh;
-    width: 100px;
-    padding: 10px;
-    transform: translatex(-50%);
-    border-radius: 10px;
-    transition: 0.2s;
+    top: 50%;
+    width: 150px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
     border-color: transparent;
+    border-radius: 25px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px 2px gray;
+    font-size: 25px;
+
 }
 
 .start:hover {

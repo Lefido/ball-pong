@@ -24,7 +24,7 @@ var vie_p1 = 3
 var vie_p2 = 3
 
 
-var bvx = 4; // Vitesse x de la Ball
+var bvx = 0.5; // Vitesse x de la Ball
 var bvy = 2; // Vitesse y de la Ball
 
 var speed_ball = 0;
@@ -47,7 +47,7 @@ button.addEventListener("click", function() {
         ball.style.visibility = "hidden"
         button.style.visibility = "visible"
         map = {}; // You could also use an array
-        bvx = 4;
+        bvx = 1;
     } else {
         running = true;
         game_over.style.visibility = "hidden";
@@ -78,17 +78,17 @@ button.addEventListener("click", function() {
 const player_1 = document.querySelector(".player-1");
 
 var pl1_y = player_1.offsetTop - (player_1.offsetHeight /2) - 10
-var pl1_vy = 10;
+var pl1_vy = 6;
 
 // Player 1
 
 const player_2 = document.querySelector(".player-2");
 
 var pl2_y = player_2.offsetTop - (player_2.offsetHeight / 2) - 10
-var pl2_vy = 10;
+var pl2_vy = 6;
 
 
-setInterval(start, 10); // Execution toute les 100 ms
+setInterval(start, 5); // Execution toute les 100 ms
 
 function start() {
 
@@ -96,7 +96,9 @@ function start() {
 
     if (running) {
         playBall();
-        keyPressed();
+        keyPressed(); 
+    } else {
+        button.focus();
     }
 
     
@@ -109,7 +111,6 @@ function start() {
 
 function keyPressed(){
 
-    
 
     onkeydown = onkeyup = function(e){ e = e || e.event; // to deal with IE
     map[e.code] = e.type == 'keydown'; /* insert conditional here */ }
@@ -179,7 +180,9 @@ function playBall() {
             ball.style.visibility = "hidden";
             vie_p1 -= 1
             life_p1.innerHTML = vie_p1
+           
             running = false;
+            
 
             if (vie_p1<=0) {
                 game_over.innerHTML = "PLAYER 1 PERDU"
@@ -197,8 +200,9 @@ function playBall() {
             ball.style.visibility = "hidden";
             vie_p2 -= 1
             life_p2.innerHTML = vie_p2
+            
             running = false;
-
+           
             if (vie_p2<=0) {
                 game_over.innerHTML = "PLAYER 2 PERDU"
                 game_over.style.visibility = "visible";
@@ -209,10 +213,10 @@ function playBall() {
         bvx = - bvx
     }
 
-    if (by >= (body.offsetHeight ) - ball.offsetHeight / 2 - 5 || by <= 0) {
+    if (by >= (body.offsetHeight ) - ball.offsetHeight / 2 - 8 || by <= 0) {
 
-        if (by >= body.offsetHeight - ball.offsetHeight / 2 - 5) {
-            by = body.offsetHeight - ball.offsetHeight /2 - 5
+        if (by >= (body.offsetHeight) - ball.offsetHeight / 2 - 8) {
+            by = (body.offsetHeight) - ball.offsetHeight /2 - 8
         }
 
         if (by <= 0) {
@@ -260,9 +264,9 @@ if (bx >= player_1.offsetLeft
 
     if (speed_ball % modulo === 0) {
         if (bvx <0 ) {
-            bvx -= 1
+            bvx -= 0.5
         } else {
-            bvx += 1
+            bvx += 0.5
         }
         
     }
@@ -286,9 +290,9 @@ if (bx >= player_2.offsetLeft
 
     if (speed_ball % modulo === 0) {
         if (bvx <0 ) {
-            bvx -= 1
+            bvx -= 0.5
         } else {
-            bvx += 1
+            bvx += 0.5
         }
     }
 
