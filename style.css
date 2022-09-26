@@ -105,6 +105,7 @@ body {
   padding: 20px;
   transform: translate(-50%, -50%);
   border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.801);
   border-radius: 25px;
   transition: 0.2s;
   box-shadow: 0 0 10px 2px gray;
@@ -115,6 +116,10 @@ body {
   cursor: pointer;
   background-color: gray;
   color: white;
+}
+
+.start:focus-visible {
+  outline: 4px solid green;
 }
 
 /*# sourceMappingURL=style.css.map */
